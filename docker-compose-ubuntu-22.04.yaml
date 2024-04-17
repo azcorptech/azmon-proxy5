@@ -1,14 +1,14 @@
 version: "4.0"
 services:
-    zabbix-proxy-v4:
-        image: azcorptechbr/azmon-proxy5:latest
+    zabbix-proxy:
+        image: azcorptechbr/azmon-proxy-5.0:latest
         container_name: azmon-proxy5
         hostname: azmon-proxy5
         ports:
             - $IP:$ZBX_SERVER_PORT:$ZBX_SERVER_PORT
-        cap_add: ['NET_ADMIN']
-        devices:
-            - /dev/net/tun
+#        cap_add: ['NET_ADMIN']
+#        devices:
+#            - /dev/net/tun
         environment:
             - ZBX_HOSTNAME=$ZBX_HOSTNAME
             - ZBX_SERVER_HOST=$ZBX_SERVER_HOST
